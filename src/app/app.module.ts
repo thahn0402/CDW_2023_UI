@@ -15,6 +15,11 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthGuard} from "./_auth/auth.guard";
 import {AuthInterceptor} from "./_auth/auth.interceptor";
 import {UserService} from "./_services/user.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,11 @@ import {UserService} from "./_services/user.service";
     RouterModule,
     FormsModule,
     HttpClientModule,
-
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     AuthGuard,
