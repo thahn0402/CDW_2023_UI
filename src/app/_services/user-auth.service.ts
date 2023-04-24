@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +34,15 @@ export class UserAuthService {
     const roles = this.getRoles();
     const token = this.getToken();
     return roles.length > 0 && token.length > 0;
+  }
+
+  public isAdmin() {
+    const roles: any[] = this.getRoles();
+    return roles[0].roleName === "Admin";
+  }
+
+  public isUser() {
+    const roles: any[] = this.getRoles();
+    return roles[0].roleName === "User";
   }
 }

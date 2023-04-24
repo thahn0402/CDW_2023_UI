@@ -3,7 +3,12 @@
     E-Shopper
   </span>
   <span class="space-buttons"></span>
-  <button *ngIf="!isLoggedIn()" mat-raised-button color="green" routerLink="/login">Login</button>
-  <button *ngIf="isLoggedIn()" mat-raised-button color="warn" (click)="logout()">Logout</button>
+  <button *ngIf="!isLoggedIn()" mat-raised-button routerLink="/login">Đăng nhập</button>
+  <button *ngIf="isLoggedIn()" mat-raised-button color="warn" (click)="logout()">Đăng xuất</button>
 
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()">
+  <button mat-raised-button routerLink="/">Trang chủ</button>
+  <button *ngIf="isAdmin()" mat-raised-button routerLink="/addNewProduct">Thêm sản phẩm</button>
 </mat-toolbar>
